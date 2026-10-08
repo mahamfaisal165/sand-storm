@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://lf5p15k66i7u"]
+
+[ext_resource type="Script" uid="uid://davsak7qde0hc" path="res://cactus.gd" id="1_v3bmc"]
+[ext_resource type="Texture2D" uid="uid://bb7kbfxwxmr8l" path="res://assets/New Piskel (6).png" id="2_l2xdd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mel2l"]
+size = Vector2(29, 32)
+
+[node name="cactus" type="Area2D" unique_id=610441580]
+script = ExtResource("1_v3bmc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=182058739]
+texture = ExtResource("2_l2xdd")
+region_enabled = true
+region_rect = Rect2(0, 63.9439, 37.88521, 32.0561)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2096913439]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_mel2l")
