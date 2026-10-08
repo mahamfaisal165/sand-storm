@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var game_manager: Node = %"game manager"
+
 # Optional: Adjust point value in the Inspector
 @export var score_value: int = 1
 
@@ -10,8 +12,5 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	# Check if the colliding body is the player
 	if body.is_in_group("player") or body.name.to_lower().contains("player"):
-		# Add score logic here if you have a Global/Game Manager, e.g.:
-		# GameManager.add_score(score_value)
-		
-		# Remove the coin from the scene
+		game_manager.add_point()
 		queue_free()

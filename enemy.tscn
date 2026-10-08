@@ -42,12 +42,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mel2l"]
-radius = 18.0
-height = 36.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_215e1"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mel2l"]
-radius = 15.132746
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7sc4i"]
+radius = 12.0
+height = 34.0
 
 [node name="enemy" type="CharacterBody2D" unique_id=1976081590]
 script = ExtResource("1_4gyqm")
@@ -57,11 +56,12 @@ sprite_frames = SubResource("SpriteFrames_3cfvr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1815211159]
 position = Vector2(1, -1)
-shape = SubResource("CapsuleShape2D_mel2l")
+shape = SubResource("CapsuleShape2D_215e1")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=248513018]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1409593156]
-shape = SubResource("CircleShape2D_mel2l")
+position = Vector2(2, 0)
+shape = SubResource("CapsuleShape2D_7sc4i")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
