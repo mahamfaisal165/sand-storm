@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dldmsqnktwwni"]
+
+[ext_resource type="Script" uid="uid://da678gsy14kxu" path="res://jumping.gd" id="1_0gfts"]
+[ext_resource type="Texture2D" uid="uid://c13v78n4xy55r" path="res://assets/platform.png" id="2_uljkv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ienqc"]
+atlas = ExtResource("2_uljkv")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mel2l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ienqc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mel2l"]
+size = Vector2(35, 16)
+
+[node name="jumping" type="Area2D" unique_id=1250330643]
+script = ExtResource("1_0gfts")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=393989323]
+sprite_frames = SubResource("SpriteFrames_mel2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1926976880]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_mel2l")
