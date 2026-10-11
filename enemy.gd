@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@export var health: int = 5
+# Set health to 3 so it takes 3 bullet hits to defeat
+@export var health: int = 3
 
 var previous_x: float = 0.0
 
@@ -46,4 +47,4 @@ func take_damage(amount: int) -> void:
 
 
 func die() -> void:
-	queue_free()
+	call_deferred("queue_free")
