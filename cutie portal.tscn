@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://drur3nppdv7ep"]
+
+[ext_resource type="Script" uid="uid://cuxxk001cprfl" path="res://portal.gd" id="1_r4rmb"]
+[ext_resource type="Texture2D" uid="uid://dqd78sj01qc6f" path="res://assets/portal (1).png" id="2_ky0fm"]
+[ext_resource type="AudioStream" uid="uid://oxjwoqu6jubo" path="res://assets/potal.mp3" id="3_x40kb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deadl"]
+atlas = ExtResource("2_ky0fm")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmty0"]
+atlas = ExtResource("2_ky0fm")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mel2l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deadl")
+}],
+"loop": 1,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmty0")
+}],
+"loop": 1,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mel2l"]
+size = Vector2(35, 48)
+
+[node name="portal" type="Area2D" unique_id=2042212312]
+script = ExtResource("1_r4rmb")
+target_scene = "uid://cpxvvho7d1stf"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=223246640]
+sprite_frames = SubResource("SpriteFrames_mel2l")
+animation = &"open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=654611025]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_mel2l")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1932515728]
+stream = ExtResource("3_x40kb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

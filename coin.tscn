@@ -22,7 +22,7 @@ animations = [{
 radius = 14.0
 height = 38.0
 
-[node name="coin" type="Area2D" unique_id=404234258 groups=["player"]]
+[node name="coin" type="Area2D" unique_id=404234258 groups=["coin"]]
 script = ExtResource("1_0t63x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1459417429]

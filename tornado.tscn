@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://megu2v1xeihi"]
+
+[ext_resource type="Script" uid="uid://ddfmarqdbym0p" path="res://area_2d.gd" id="1_yyyt4"]
+[ext_resource type="Texture2D" uid="uid://gpmpbett8j3j" path="res://assets/tornadoo.png" id="2_b05kn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohrl4"]
+atlas = ExtResource("2_b05kn")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mel2l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohrl4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udj8g"]
+size = Vector2(58.5, 77.5)
+
+[node name="tornado" type="Area2D" unique_id=780392587]
+script = ExtResource("1_yyyt4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=617708869]
+sprite_frames = SubResource("SpriteFrames_mel2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1683240740]
+position = Vector2(2, -1.75)
+shape = SubResource("RectangleShape2D_udj8g")
